@@ -1,0 +1,30 @@
+a = input('Write an article or a paragraph: ') print()
+unique_words = []
+c = len(a.split())
+a1 = a.replace(',', ' ') a2 = a1.replace('.',' ' ) a3 = a2.lower()
+z = a3.split()
+#print(z)
+e=0
+word_count = len(a.split()) print('No of words : ',word_count) b = a.split()
+for i in b:
+d = len(i)
+e+=d
+if i not in unique_words:
+unique_words.append(i)
+print('No of Unique Words: ',len(unique_words)) print('Average length of each word ',e/c)
+G = {}
+for i in z:
+if i not in G.values(): G[i] = z.count(i)
+else: G[i]+=1
+TitleCase = [] for i in b:
+if i.istitle(): TitleCase.append(i)
+import collections as c
+d = c.Counter(z)
+print('Most common 5 words are : ',d.most_common(5))
+print('Title Words : ',TitleCase)
+ 
+t = input('Word to search frequency: ') if t in z:
+print('The frequency of your word is ',z.count(t))
+para = a.replace('. ', '.').replace('! ', '!') lines = para.split('!')
+print('\nLines ending with exclamation marks are:') for string in lines[:-1]:
+temp = string.split('.') print(temp[-1]+'!')
