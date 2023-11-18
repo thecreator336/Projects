@@ -1,0 +1,22 @@
+class Cat:
+  species = 'mammal'
+  def __init__(self, name, age):
+      self.name = name
+      self.age = age
+
+cat1=Cat('tim',6)
+cat2=Cat('tap',9)
+cat3=Cat('toe',2)
+'''cats={cat1.name:cat1.age,cat2.name:cat2.age,cat3.name:cat3.age}'''
+
+
+def findOldest( *cats):
+  maxCat = ""
+  maxAge = 0
+  for cat in cats:
+    if cat.age > maxAge:
+      maxAge = cat.age
+      maxCat = cat.name
+  print(f"The oldest cat, {maxCat} is {maxAge} years old")
+
+findOldest(cat1,cat2,cat3)
